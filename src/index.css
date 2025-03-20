@@ -1,0 +1,26 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  body {
+    @apply font-sans text-secondary;
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply bg-primary opacity-25;
+}
+
+.swiper-pagination-bullet-active {
+  @apply opacity-100;
+}
+
+.team-swiper .swiper-button-next,
+.team-swiper .swiper-button-prev {
+  @apply text-primary;
+}
+
+.team-swiper .swiper-button-disabled {
+  @apply opacity-30;
+}
