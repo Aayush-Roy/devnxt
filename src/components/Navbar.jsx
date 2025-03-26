@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import Logo from '../assets/logo.svg';
+import { useState } from "react";
+import { Link } from "react-scroll";
+import Logo from "../assets/logo.svg";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-white z-50 py-4 px-6 lg:px-20">
+    <nav className="fixed top-0 left-0 right-0 bg-white z-50 py-4 px-6 lg:px-20 shadow">
       <div className="max-w-7xl mx-auto flex justify-between items-center">
         <a href="/" className="flex items-center">
           <img src={Logo} alt="Skyline" className="h-8" />
@@ -14,17 +15,15 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden lg:flex items-center space-x-8">
-          <a href="#" className="text-black hover:text-primary">Home</a>
-          <a href="#" className="text-black hover:text-primary">Services</a>
-          <a href="#" className="text-black hover:text-primary">Project</a>
-          <a href="#" className="text-black hover:text-primary">About Us</a>
-          <button className="bg-white text-black border border-black rounded-full px-6 py-2 hover:bg-primary hover:text-white hover:border-primary transition">
-            Contact Us
-          </button>
+          <Link to="hero" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary">Home</Link>
+          <Link to="services" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary">Services</Link>
+          <Link to="projects" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary">Projects</Link>
+          <Link to="about" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary">About Us</Link>
+          <Link to="contact" smooth={true} duration={500} className="cursor-pointer bg-white text-black border border-black rounded-full px-6 py-2 hover:bg-primary hover:text-white hover:border-primary transition">Contact Us</Link>
         </div>
 
         {/* Mobile Menu Button */}
-        <button 
+        <button
           className="block lg:hidden"
           onClick={() => setIsOpen(!isOpen)}
           aria-label="Toggle menu"
@@ -45,15 +44,13 @@ export default function Navbar() {
           bg-white shadow-lg lg:hidden 
           transition-all duration-300 ease-in-out
           ${isOpen ? 'opacity-100 visible' : 'opacity-0 invisible'}
-          `}>
+        `}>
           <div className="flex flex-col p-4 space-y-4">
-            <a href="#" className="text-black hover:text-primary">Home</a>
-            <a href="#" className="text-black hover:text-primary">Services</a>
-            <a href="#" className="text-black hover:text-primary">Project</a>
-            <a href="#" className="text-black hover:text-primary">About Us</a>
-            <button className="bg-white text-black border border-black rounded-full px-6 py-2 hover:bg-primary hover:text-white hover:border-primary transition w-full">
-              Contact Us
-            </button>
+            <Link to="hero" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary" onClick={() => setIsOpen(false)}>Home</Link>
+            <Link to="services" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary" onClick={() => setIsOpen(false)}>Services</Link>
+            <Link to="projects" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary" onClick={() => setIsOpen(false)}>Projects</Link>
+            <Link to="about" smooth={true} duration={500} className="cursor-pointer text-black hover:text-primary" onClick={() => setIsOpen(false)}>About Us</Link>
+            <Link to="contact" smooth={true} duration={500} className="cursor-pointer bg-white text-black border border-black rounded-full px-6 py-2 hover:bg-primary hover:text-white hover:border-primary transition w-full" onClick={() => setIsOpen(false)}>Contact Us</Link>
           </div>
         </div>
       </div>
