@@ -36,12 +36,7 @@ export default function Team() {
       image: "https://i.pinimg.com/736x/74/23/df/7423df4447911ab587d5a794cfcc6322.jpg",
       description: "Creative professional with a keen eye for brand identity"
     },
-    {
-      name: "Aayush",
-      role: "Software Developer",
-      image: "https://i.pinimg.com/736x/45/5f/2a/455f2aa9d347bf41e11b786a3fe33da7.jpg",
-      description: "Creative professional with a keen eye for brand identity"
-    }
+    
   ];
 
   return (
