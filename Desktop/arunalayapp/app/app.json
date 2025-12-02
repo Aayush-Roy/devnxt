@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "app",
-    "slug": "app",
+    "name": "Arunalaya",
+    "slug": "arunalaya",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/appicon.png",
     "userInterfaceStyle": "light",
     "newArchEnabled": true,
     "splash": {
@@ -13,11 +13,15 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.anonymous.app",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
+        "foregroundImage": "./assets/appicon.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -25,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "611184ff-3d0f-413c-ad8a-5f8f991f093a"
+      }
     }
   }
 }

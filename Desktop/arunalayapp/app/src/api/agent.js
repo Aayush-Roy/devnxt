@@ -30,7 +30,7 @@ export const agentAPI = {
 },
   updateBookingStatus: async (id, status) => {
     try {
-      return await put(`/agents/bookings/${id}/status`, { status });
+      return await put(`/agents/bookings/${id}/status`, { bookingStatus: status });
     } catch (error) {
       throw error;
     }

@@ -592,13 +592,16 @@ const AgentBookingDetailsScreen = ({ route, navigation }) => {
     }, [bookingId]);
 
     const updateBookingStatus = async (status) => {
+        console.log("before Updated to →", status);
         setUpdating(true);
         try {
             await agentAPI.updateBookingStatus(bookingId, status);
+            console.log("Status Updated to →", status);
             setBooking(prev => ({ ...prev, bookingStatus: status }));
             showToast(`Booking status updated to ${status}`, 'success');
         } catch (error) {
             showToast(error.message || 'Failed to update booking status', 'error');
+            console.log("Update Status Error →", error);
         } finally {
             setUpdating(false);
         }

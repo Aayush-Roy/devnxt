@@ -1062,7 +1062,7 @@
 
 
 
-// current location 
+// // current location 
 // export default BookingScreen;
 import React, { useState, useEffect } from 'react';
 import {

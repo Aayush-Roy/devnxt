@@ -6,8 +6,9 @@ import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Toast from '../../components/Toast';
 import colors from '../../utils/colors';
+import { useNavigation } from '@react-navigation/native';
 
-const SignupScreen = ({ navigation }) => {
+const SignupScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [phone, setPhone] = useState('');
@@ -16,7 +17,7 @@ const SignupScreen = ({ navigation }) => {
   const [loading, setLoading] = useState(false);
   const [toast, setToast] = useState({ message: '', type: '', isVisible: false });
   const { login } = useContext(AuthContext);
-
+  const navigation = useNavigation();
   const showToast = (message, type) => {
     setToast({ message, type, isVisible: true });
   };
@@ -46,6 +47,7 @@ const SignupScreen = ({ navigation }) => {
       });
       await login(response.user, 'user', response.token);
       showToast('Signup successful', 'success');
+      navigation.navigate('Login');
     } catch (error) {
       showToast(error.message || 'Signup failed', 'error');
     } finally {

@@ -45,7 +45,11 @@ const AgentLoginScreen = ({ navigation }) => {
       await login(response.data, 'agent', response.data.token);
 
       showToast('Login Successful', 'success');
-      navigation.navigate("AgentProfileScreen")
+      // navigation.navigate("AgentDashboard")
+      navigation.navigate("AgentStack", {
+  screen: "AgentDashboard"
+});
+
     } catch (error) {
       showToast(error.message || 'Login failed', 'error');
     } finally {
